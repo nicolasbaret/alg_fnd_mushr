@@ -17,7 +17,7 @@
     <arg name="teleop" default="true"/>
 
     <!-- Launch  map server-->
-    <include  if="$(arg map_server)" file="$(find mushr_sim)/launch/map_server.launch">
+    <include  if="$(arg map_server)" file="$(find mushr_base)/launch/includes/map_server.launch">
         <arg name="map" value="$(eval map if map else (_env_map if _env_map else _default_map))" />
     </include>
 
@@ -40,6 +40,8 @@
         <arg name="use_tf_prefix" value="false" />
         <arg name="fake_localization" value="$(arg fake_localization)" />
         <arg name="teleop" value="$(arg teleop)" />
+        <arg name="foxglove_teleop" value="0" />
+        <arg name="keyboard_teleop" value="1" />
     </include>
 
 
