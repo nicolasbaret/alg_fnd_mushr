@@ -10,7 +10,7 @@ function __ros_prompt {
     UW_TOOLS_PROMPT_ROS_STATUS=$(get_ros_status)
 }
 
-function sim-mode {
+function simmode {
     if [[ "$UW_TOOLS_MODE" == "none" ]]; then
         export original_PROMPT=$PROMPT
         export original_ROS_MASTER_URI="$ROS_MASTER_URI"
@@ -25,7 +25,7 @@ function sim-mode {
     PROMPT="%{$fg[red]%}lcl \$UW_TOOLS_PROMPT_ROS_STATUS%{$reset_color%} "$original_PROMPT
 }
 
-function exit-mode {
+function exitmode {
     export ROS_MASTER_URI="$original_ROS_MASTER_URI"
     export ROS_IP="$original_ROS_IP"
     PROMPT="$original_PROMPT"

@@ -5,4 +5,4 @@ case "$UW_TOOLS_SHELL_FLAVOR" in
     bash) source "$SOURCES_ROOT/common/modes.bash";;
 esac
 
-sim-mode
+simmode

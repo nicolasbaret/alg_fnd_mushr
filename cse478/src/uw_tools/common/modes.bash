@@ -10,7 +10,7 @@ function __prompt_command {
     UW_TOOLS_PROMPT_ROS_STATUS=$(get_ros_status)
 }
 
-function sim-mode {
+function simmode {
     if [[ "$UW_TOOLS_MODE" == "none" ]]; then
         export original_PROMPT_COMMAND="$PROMPT_COMMAND"
         export original_PS1="$PS1"
@@ -25,7 +25,7 @@ function sim-mode {
     PS1="\[\033[41;1;37m\]lcl \$UW_TOOLS_PROMPT_ROS_STATUS\[\033[0m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
 }
 
-function exit-mode {
+function exitmode {
     export ROS_MASTER_URI="$original_ROS_MASTER_URI"
     export ROS_IP="$original_ROS_IP"
     PS1="$original_PS1"
