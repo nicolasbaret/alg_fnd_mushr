@@ -20,7 +20,7 @@ class TestResample(unittest.TestCase):
 
         particles = np.arange(n_particles)
         particles = particles[..., np.newaxis]
-        weights = np.arange(n_particles, dtype=np.float)
+        weights = np.arange(n_particles, dtype=np.float64)
         weights /= np.sum(weights)
         prev_particles = particles.copy()
         prev_weights = weights.copy()
@@ -55,7 +55,7 @@ class TestResample(unittest.TestCase):
             # Particles with index greater than k_val are given zero weight
             particles = np.arange(n_particles)
             particles = particles[..., np.newaxis]
-            weights = np.arange(n_particles, dtype=np.float)
+            weights = np.arange(n_particles, dtype=np.float64)
             weights[k_val:] = 0.0
             weights /= np.sum(weights)
 

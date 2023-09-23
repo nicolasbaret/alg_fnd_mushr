@@ -82,7 +82,7 @@ class TestMotionModel(unittest.TestCase):
         # correctly can be surprising when manually testing, so we'll catch it early.
         self.assertEqual(
             changes.dtype,
-            np.float,
+            np.float64,
             msg="compute_changes should return a floating point array, even when provided integer type arguments",
         )
 
