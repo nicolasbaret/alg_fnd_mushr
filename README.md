@@ -1,4 +1,4 @@
-# mushr478
+# alg_fnd_mushr
 
 ## Usage
 
