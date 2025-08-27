@@ -1,3 +1,4 @@
+import math
 import numpy as np
 import rospy
 
@@ -17,7 +18,11 @@ def norm_python(data):
     n, d = data.shape
     norm = np.zeros(n)
     # BEGIN QUESTION 2.1
-    "*** REPLACE THIS LINE ***"
+    for i in range(n):
+        sum = 0
+        for j in range(d):
+            sum += data[i,j] * data[i,j]
+        norm[i] = math.sqrt(sum)
     # END QUESTION 2.1
     return norm
 
@@ -33,7 +38,10 @@ def norm_numpy(data):
     # You can call np.sqrt, np.sum, np.square, etc.
     # Hint: you may find the `axis` parameter useful.
     # BEGIN QUESTION 2.2
-    "*** REPLACE THIS LINE ***"
+    squared = np.square(data)
+    sum = np.sum(squared,axis=1)
+    root = np.sqrt(sum)
+    return root
     # END QUESTION 2.2
 
 
