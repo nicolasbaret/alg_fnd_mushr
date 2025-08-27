@@ -1,6 +1,7 @@
 import math
 import numpy as np
 import rospy
+from geometry_msgs.msg import PoseStamped
 
 # BEGIN QUESTION 2.3
 "*** REPLACE THIS LINE ***"
@@ -56,9 +57,10 @@ class PoseListener:
         # Hint: once you've figured out the right message type, don't forget to
         # import it at the top! If the message type from `rostopic info` is
         # "X_msgs/Y", the Python import would be "from X_msgs.msg import Y".
+        # 
         # BEGIN QUESTION 2.3
         "*** REPLACE THIS LINE ***"
-        self.subscriber = None
+        self.subscriber = rospy.Subscriber("/car/car_pose",PoseStamped, self.callback)
         # END QUESTION 2.3
 
     def callback(self, msg):
