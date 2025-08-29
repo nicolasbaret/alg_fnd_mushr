@@ -31,7 +31,6 @@ if __name__ == "__main__":
             break
 
     locations = np.array(listener.storage)
-
     # Plot the locations
     plt.figure()
     plt.plot(locations[:, 0], locations[:, 1])
@@ -41,12 +40,20 @@ if __name__ == "__main__":
     plt.axis("equal")
     # By default, the figure will be saved to ~/.ros/locations.png; modify this
     # line to save it elsewhere.
-    plt.savefig("locations.png")
+    plt.savefig("/home/robotics/Desktop/locations.png")
     # Uncomment plt.show() to visualize the plot
     # plt.show()
 
     # Use norm_numpy to compute the distance from the origin over time. Then,
     # plot the distance over time as a line chart and save the plot.
     # BEGIN QUESTION 2.5
-    "*** REPLACE THIS LINE ***"
+    distances = norm_numpy(locations)
+    # Plot the distances
+    plt.figure()
+    plt.plot(distances[:, 0], distances[:, 1])
+    plt.title("Car Distance")
+    plt.xlabel("Distance (m)")
+    plt.ylabel("Distance (m)")
+    plt.axis("equal")
+    plt.savefig("/home/robotics/Desktop/distances.png")
     # END QUESTION 2.5

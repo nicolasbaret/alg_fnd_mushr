@@ -59,7 +59,6 @@ class PoseListener:
         # "X_msgs/Y", the Python import would be "from X_msgs.msg import Y".
         # 
         # BEGIN QUESTION 2.3
-        "*** REPLACE THIS LINE ***"
         self.subscriber = rospy.Subscriber("/car/car_pose",PoseStamped, self.callback)
         # END QUESTION 2.3
 
@@ -72,7 +71,7 @@ class PoseListener:
 
         # Extract and store the x and y position from the message data
         # BEGIN QUESTION 2.4
-        "*** REPLACE THIS LINE ***"
+        self.storage.append((msg.pose.position.x,msg.pose.position.y))
         # END QUESTION 2.4
         if len(self.storage) == self.size:
             self.done = True
